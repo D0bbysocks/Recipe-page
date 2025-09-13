@@ -1,0 +1,451 @@
+:root {
+    /* ## Colors */
+        --white: hsl(0, 0%, 100%);
+
+        --stone-100: hsl(30, 54%, 90%);
+        --stone-150: hsl(30, 18%, 87%);
+        --stone-600: hsl(30, 10%, 34%);
+        --stone-900: hsl(24, 5%, 18%);
+
+        --brown: hsl(14, 45%, 36%);
+
+        --rose-800: hsl(332, 51%, 32%);
+        --rose-50: hsl(330, 100%, 98%);
+
+    /* spacing */
+        --space-8:   0.5rem;   /*  8px */
+        --space-12:  0.75rem;  /* 12px */
+        --space-16:  1rem;     /* 16px */
+        --space-24:  1.5rem;   /* 24px */
+        --space-32:  2rem;     /* 32px */
+        --space-28:  1.75rem;  /* 28px */
+        --space-40:  2.5rem;   /* 40px */
+        --space-48:  3rem;     /* 48px */
+        --space-64:  4rem;     /* 64px */
+        --space-128: 8rem;     /* 128px */
+
+
+    /* text presets */ 
+        --preset-1-font-family: "Young Serif", serif;
+        --preset-1-font-size: 2.25rem;
+        --preset-1-line-height: 100%;
+        --preset-1-font-weight: 400;
+
+        --preset-2-font-family: "Young Serif", serif;
+        --preset-2-font-size: 1.75rem;
+        --preset-2-line-height: 100%;
+        --preset-2-font-weight: 400;
+
+        --preset-3-font-family: "Outfit", sans-serif;
+        --preset-3-font-size: 1.25rem;
+        --preset-3-line-height: 100%;
+        --preset-3-font-weight: 600;
+
+        --preset-4-font-family: "Outfit", sans-serif;
+        --preset-4-font-size: 1rem;
+        --preset-4-line-height: 150%;
+        --preset-4-font-weight: 400;
+
+        --preset-4b-font-family: "Outfit", sans-serif;
+        --preset-4b-font-size: 1rem;
+        --preset-4b-line-height: 1.5;
+        --preset-4b-font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Young Serif";
+    src: url(./assets/fonts/young-serif/YoungSerif-Regular.ttf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url(./assets/fonts/outfit/Outfit-VariableFont_wght.ttf) format("truetype-variations");
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+html {
+    letter-spacing: 0;
+}
+
+body {
+    min-height: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+}
+
+.recipe-header img {
+    display: block;
+    width: 100%;     
+    aspect-ratio: 375 / 171;
+    object-fit: cover;
+}
+
+.prose {
+    padding: var(--space-40) var(--space-32);
+}
+
+.headline h1 {
+    color: var(--stone-900);
+    font-family: var(--preset-1-font-family);
+    font-size: var(--preset-1-font-size);
+    font-weight: var(--preset-1-font-weight);
+    line-height: var(--preset-1-line-height);
+}
+
+.subtitle {
+    font-family: var(--preset-4-font-family);
+    font-size: var(--preset-4-font-size);
+    font-weight: var(--preset-4-font-weight);
+    line-height: var(--preset-4-line-height);
+    color: var(--stone-600);
+}
+
+.headline p {
+    margin-top: var(--space-24);
+}
+
+.prep-time {
+    margin-top: var(--space-32);
+    padding: var(--space-24);
+    background-color: var(--rose-50);
+    border-radius: var(--space-12);
+}
+
+.h3-heading {
+    color: var(--rose-800);
+    font-family: var(--preset-3-font-family);
+    font-size: var(--preset-3-font-size);
+    font-weight: var(--preset-3-font-weight);
+    line-height: var(--preset-3-line-height);
+}
+
+.prep-text {
+    margin-top: var(--space-16);
+    font-family: var(--preset-4-font-family);
+    font-size: var(--preset-4-font-size);
+    font-weight: var(--preset-4-font-weight);
+    line-height: var(--preset-4-line-height);
+    color: var(--stone-600);
+}
+
+.prep-text-wrapper {
+    display: flex;
+    gap: var(--space-28);
+    align-items: center;
+}
+
+.prep-text p:nth-of-type(2),
+.prep-text p:nth-of-type(3) { 
+    margin-top: var(--space-8);
+}
+
+.bullet-p::before {
+    content: "•";
+    padding-left: var(--space-8);
+}
+
+
+
+
+.blt-spacer {
+    padding-left: var(--space-16);
+}
+
+.bold-span {
+    font-weight: var(--preset-4b-font-weight);
+}
+
+
+.ingredients {
+    margin: var(--space-32) 0;
+}
+
+.h2-heading {
+    color: var(--brown);
+    font-family: var(--preset-2-font-family);
+    font-size: var(--preset-2-font-size);
+    font-weight: var(--preset-2-font-weight);
+    line-height: var(--preset-2-line-height);  
+}
+
+.ingredients ul {
+    list-style: none;
+    margin: var(--space-16) 0 0;
+    padding: 0;                   
+}
+
+.ingredients li {
+  margin: var(--space-8) 0 0;
+  font-family: var(--preset-4-font-family);
+  font-size: var(--preset-4-font-size);
+  font-weight: var(--preset-4-font-weight);
+  line-height: var(--preset-4-line-height);
+  color: var(--stone-600);
+}
+
+.ingredients li:first-of-type {
+    margin-top: 0;
+}
+
+.spacer {
+    width: 100%;
+    height: 1px;
+    background-color: var(--stone-150);
+}
+
+.instructions {
+    margin: var(--space-32) 0;
+}
+
+.num-list {
+    margin-top: var(--space-24);
+}
+
+.list-section li {
+    display: grid;
+    grid-template-columns: var(--space-40) 1fr;
+    align-items: center;
+    margin-top: var(--space-8);
+    font-family: var(--preset-4-font-family);
+    font-size: var(--preset-4-font-size);
+    line-height: var(--preset-4-line-height);
+    color: var(--stone-600);
+}
+
+.list-section li:first-of-type { margin-top: 0; }
+
+/* Marker immer in Spalte 1 */
+.list-section li::before {
+    grid-column: 1;
+    justify-self: start;
+}
+
+/* Inhalt in Spalte 2 (ein Wrapper pro li!) */
+.list-section li > .li-text {
+    grid-column: 2;
+}
+
+
+.ingredients li::before {
+    content: "";
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--brown);
+    margin-left: var(--space-8);       /* 8px „Wandabstand“ in der Box */
+}
+
+/* -------- Instructions (Numbers) -------- */
+.instructions .num-list li { counter-increment: step; }
+.instructions .num-list li::before {
+    content: counter(step) ".";
+    padding-left: var(--space-8);
+    text-align: left;
+    font-weight: var(--preset-4b-font-weight);
+    align-self: start;
+}
+
+
+.nutrition {
+    margin-top: var(--space-32);
+}
+
+.nutrition p {
+    margin-top: var(--space-24);
+    font-family: var(--preset-4-font-family);
+    font-size: var(--preset-4-font-size);
+    line-height: var(--preset-4-line-height);
+    color: var(--stone-600);
+}
+
+.nutrition table {
+    width: 100%;
+    margin-top: var(--space-24);
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.nutrition th {
+  width: 50%;
+  text-align: left;
+}
+
+.nutrition th,
+.nutrition td {
+  padding: var(--space-12) 0;
+}
+
+.nutrition tr:first-child th,
+.nutrition tr:first-child td {
+  padding-top: 0;
+}
+
+.nutrition tr:last-child th,
+.nutrition tr:last-child td {
+  padding-bottom: 0;
+}
+
+.nutrition table th {
+    text-align: left;
+    color: var(--stone-600);
+    font-family: var(--preset-4-font-family);
+    font-size: var(--preset-4-font-size);
+    font-weight: var(--preset-4-font-weight);
+    line-height: var(--preset-4-line-height);
+}
+
+.nutrition table td {
+    font-family: var(--preset-4b-font-family);
+    font-size: var(--preset-4b-font-size);
+    font-weight: var(--preset-4b-font-weight);
+    line-height: var(--preset-4b-line-height);
+    color: var(--brown);
+}
+
+.nutrition tr {
+  border-bottom: 1px solid var(--stone-150);
+}
+
+
+.nutrition tr:last-child {
+  border-bottom: none;
+}
+
+.th-text {
+    padding-left: var(--space-32);
+}
+
+.td-text {
+    padding-left: var(--space-16);
+}
+
+
+
+
+/* footer */
+footer { 
+    text-align: center;
+    padding: var(--space-16);
+}
+
+.attribution a {
+  display: inline-block;
+  padding: 0 .1em;
+  transition: transform 0.3s ease, padding 0.3s ease;
+}
+
+.attribution a:hover {
+  transform: scale(1.2) translateY(-2px);  /* größer + etwas nach oben */
+  padding: 0 .6em;                         /* noch mehr Platz beim Hover */
+}
+
+.attribution p {
+  display: inline-block;                   /* Breite = Textbreite */
+  margin: 0;                               /* default P-Margin weg */
+  --s: 0.15em;                             /* Linienstärke */
+  --c: var(--rose-800);                    /* Farbe */
+
+
+  color: var(--rose-800);
+  padding-bottom: var(--s);
+  background: linear-gradient(var(--c) 0 0)
+              0 100% / var(--_p,0%) var(--s) no-repeat;
+  transition: background-size .5s ease;
+}
+
+.attribution p:hover { --_p: 100%; }
+
+/* Progressive Enhancement: Gradient-Text + animierte Linie (Chrome/Safari) */
+@supports (-webkit-background-clip: text) {
+  .attribution p{
+    color: transparent;                    /* Text wird vom Background gefüllt */
+    background:
+      linear-gradient(90deg, var(--c) 50%, #000 0)
+      calc(100% - var(--_p,0%)) / 200% 100%,
+      linear-gradient(var(--c) 0 0)
+      0 100% / var(--_p,0%) var(--s) no-repeat;
+    -webkit-background-clip: text, padding-box;
+            background-clip: text, padding-box;
+    transition: .5s;
+  }
+}
+
+/* Links im Footer übernehmen die Effekte, keine native Unterstreichung */
+.attribution a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+
+/* media-querrys */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet */
+    
+    body {
+        background-color: var(--stone-100);
+    }
+
+    .page-wrapper {
+        margin: var(--space-128) auto;
+        max-width: 616px;
+        padding: var(--space-40);
+        background-color: var(--white);
+        border-radius: var(--space-24);
+    }
+    .recipe-header img {
+        border-radius: var(--space-12);
+    }
+    .prose {
+        padding: 0;
+    }
+
+    .headline {
+        margin-top: var(--space-40);
+    }
+
+    footer {
+        margin: var(--space-16) auto;
+        width: 100%;
+        max-width: 616px;
+    }
+}
+
+@media (min-width: 1024px) {
+  /*Desktop */
+    body {
+        background-color: var(--stone-100);
+    }
+
+    .page-wrapper {
+        margin: var(--space-128) auto;
+        max-width: 736px;
+        padding: var(--space-40);
+        background-color: var(--white);
+        border-radius: var(--space-24);
+    }
+    .recipe-header img {
+        border-radius: var(--space-12);
+    }
+    .prose {
+        padding: 0;
+    }
+
+    .headline {
+        margin-top: var(--space-40);
+    }
+
+    footer {
+        margin: var(--space-16) auto;
+        width: 100%;
+        max-width: 736px;
+    }
+}
