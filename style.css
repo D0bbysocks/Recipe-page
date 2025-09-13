@@ -240,7 +240,7 @@ body {
     content: "";
     width: 4px; height: 4px; border-radius: 50%;
     background: var(--brown);
-    margin-left: var(--space-8);       /* 8px „Wandabstand“ in der Box */
+    margin-left: var(--space-8);
 }
 
 /* -------- Instructions (Numbers) -------- */
@@ -336,53 +336,37 @@ footer {
     padding: var(--space-16);
 }
 
+/* Footer Links mit Hover-Effekt */
 .attribution a {
+  --s: 0.15em;  
+  --c: var(--rose-800);
+
   display: inline-block;
+  position: relative;
+  color: var(--rose-800);
+  text-decoration: none;
+  transition: transform 0.3s ease;
   padding: 0 .1em;
-  transition: transform 0.3s ease, padding 0.3s ease;
+}
+
+.attribution a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 0;
+  height: var(--s);
+  background: var(--c);
+  transition: width .3s ease;
 }
 
 .attribution a:hover {
-  transform: scale(1.2) translateY(-2px);  /* größer + etwas nach oben */
-  padding: 0 .6em;                         /* noch mehr Platz beim Hover */
+  transform: scale(1.1) translateY(-2px);
 }
 
-.attribution p {
-  display: inline-block;                   /* Breite = Textbreite */
-  margin: 0;                               /* default P-Margin weg */
-  --s: 0.15em;                             /* Linienstärke */
-  --c: var(--rose-800);                    /* Farbe */
-
-
-  color: var(--rose-800);
-  padding-bottom: var(--s);
-  background: linear-gradient(var(--c) 0 0)
-              0 100% / var(--_p,0%) var(--s) no-repeat;
-  transition: background-size .5s ease;
+.attribution a:hover::after {
+  width: 100%;   /* animierte Linie wächst */
 }
 
-.attribution p:hover { --_p: 100%; }
-
-/* Progressive Enhancement: Gradient-Text + animierte Linie (Chrome/Safari) */
-@supports (-webkit-background-clip: text) {
-  .attribution p{
-    color: transparent;                    /* Text wird vom Background gefüllt */
-    background:
-      linear-gradient(90deg, var(--c) 50%, #000 0)
-      calc(100% - var(--_p,0%)) / 200% 100%,
-      linear-gradient(var(--c) 0 0)
-      0 100% / var(--_p,0%) var(--s) no-repeat;
-    -webkit-background-clip: text, padding-box;
-            background-clip: text, padding-box;
-    transition: .5s;
-  }
-}
-
-/* Links im Footer übernehmen die Effekte, keine native Unterstreichung */
-.attribution a {
-  color: inherit;
-  text-decoration: none;
-}
 
 
 
