@@ -27,7 +27,7 @@
 
     /* text presets */ 
         --preset-1-font-family: "Young Serif", serif;
-        --preset-1-font-size: 2.25rem;
+        --preset-1-font-size: 2.5em;
         --preset-1-line-height: 100%;
         --preset-1-font-weight: 400;
 
@@ -144,13 +144,13 @@ body {
     align-items: center;
 }
 
-.prep-text p:nth-of-type(2),
-.prep-text p:nth-of-type(3) { 
-    margin-top: var(--space-8);
+.prep-text > div:not(:first-of-type) {
+  margin-top: var(--space-8);
 }
 
 .bullet-p::before {
     content: "•";
+    color: var(--rose-800);
     padding-left: var(--space-8);
 }
 
